@@ -1,4 +1,4 @@
-## Part 2: Short answer questions
+## Part 1 - Short answer questions
 
 
 
@@ -172,3 +172,20 @@ u) Question: Name some items you would place in the Asset Catalog
 v) Question: How do you change the Display Name of your app?
 
 - Answer: In your project settings, first select your app target. In the "General" tab, there will be an "Identity" section with an input field for entering the Display Name.
+
+
+
+## Part 2 - Programming assignment
+
+I have refactored and enhaced the `ColorPicker.xcodeproj` to:
+
+- Extracted the views for better view code organization, modularity, and reusability.
+- Updated the UI to work in both Light and Dark mode.
+- Replaced magic numbers with defined constants for better readability and clarity.
+
+
+
+## Part 3 - Above an Beyond
+
+I have refactored `ColorPicker.xcodeproj` to work in landscape mode.
+
