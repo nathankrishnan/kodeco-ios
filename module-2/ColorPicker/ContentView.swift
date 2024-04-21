@@ -8,7 +8,6 @@ struct ContentView: View {
   @State private var foregroundColor = Color(red: 0, green: 0, blue: 0)
 
   var body: some View {
-
     VStack {
       TitleText(text: "Color Picker")
       ColorResultView(foregroundColor: $foregroundColor)
@@ -37,6 +36,8 @@ struct SetColorView: View {
 struct ContentView_Previews: PreviewProvider {
   static var previews: some View {
     ContentView()
+      .preferredColorScheme(.light)
+      .previewInterfaceOrientation(.landscapeLeft)
     ContentView()
       .preferredColorScheme(.dark)
   }
