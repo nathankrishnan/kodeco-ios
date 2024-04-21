@@ -189,3 +189,9 @@ I have refactored and enhaced the `ColorPicker.xcodeproj` to:
 
 I have refactored `ColorPicker.xcodeproj` to work in landscape mode.
 
+
+
+## App Preview
+
+![color_picker_app_preview](./color_picker_app_preview.gif)
+
