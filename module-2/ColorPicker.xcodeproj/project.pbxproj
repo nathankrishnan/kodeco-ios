@@ -16,6 +16,7 @@
 		D8ED2EED2BD4C55E004B14B6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8ED2EEC2BD4C55E004B14B6 /* Constants.swift */; };
 		D8ED2EEF2BD4C589004B14B6 /* ColorResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8ED2EEE2BD4C589004B14B6 /* ColorResultView.swift */; };
 		D8ED2EF12BD4C624004B14B6 /* SliderViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8ED2EF02BD4C624004B14B6 /* SliderViews.swift */; };
+		D8ED2EF32BD4C698004B14B6 /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8ED2EF22BD4C698004B14B6 /* Buttons.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		D8ED2EEC2BD4C55E004B14B6 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		D8ED2EEE2BD4C589004B14B6 /* ColorResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorResultView.swift; sourceTree = "<group>"; };
 		D8ED2EF02BD4C624004B14B6 /* SliderViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderViews.swift; sourceTree = "<group>"; };
+		D8ED2EF22BD4C698004B14B6 /* Buttons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buttons.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 				D8ED2EE62BD4C3E2004B14B6 /* TextViews.swift */,
 				D8ED2EEE2BD4C589004B14B6 /* ColorResultView.swift */,
 				D8ED2EF02BD4C624004B14B6 /* SliderViews.swift */,
+				D8ED2EF22BD4C698004B14B6 /* Buttons.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -189,6 +192,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8ED2EF32BD4C698004B14B6 /* Buttons.swift in Sources */,
 				D8ED2EEF2BD4C589004B14B6 /* ColorResultView.swift in Sources */,
 				18D775C522AD944300AE281E /* ContentView.swift in Sources */,
 				1839F4B025190F2A00BB00F1 /* AppMain.swift in Sources */,
