@@ -118,6 +118,7 @@ if let unwrappedValue = optionalValue {
 }
 
 // Using guard let
+
 let optionalValue: Int? = 42
 guard let unwrappedValue = optionalValue else {
     print("Optional is nil")
