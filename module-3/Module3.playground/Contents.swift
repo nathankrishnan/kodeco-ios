@@ -209,8 +209,6 @@ rectangle2.length = 5
 
 print("Area: rectangle1 - \(rectangle1.area()) rectangle2 - \(rectangle2.area())")
 
-print(rectangle1.length)
-
 /*
 
  The difference between the area values printed for the square and rectangle are due to the differences between structs and classes in Swift.
