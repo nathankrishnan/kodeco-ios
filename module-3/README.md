@@ -143,3 +143,82 @@ l) Question: Arrays in Swift are ____________ indexed.
 m) Question: An unordered collection of unique values of the same type is a _____________.
 
 - Answer: An unordered collection of the same type is called a Set.
+
+
+
+## Part 2 - Programming assignment
+
+I have created a Swift playground in `./module-3/Module3.playground` that contains my answers for the assignment.
+
+
+
+## Part 3 - Above and Beyond
+
+In the following code:
+
+```
+struct Square {
+  var side: Int
+
+  func area() -> Int {
+    return side * side
+  }
+}
+
+class Rectangle {
+  var length: Int
+  var width: Int
+
+  init(length: Int, width: Int) {
+    self.length = length
+    self.width = width
+  }
+
+  func area() -> Int {
+    return length * width
+  }
+}
+
+
+var square1 = Square(side: 4)
+var square2 = square1
+square2.side = 5
+
+print("Area: square1 - \(square1.area()) square2 - \(square2.area())")
+
+
+var rectangle1 = Rectangle(length: 4, width: 4)
+var rectangle2 = rectangle1
+rectangle2.length = 5
+
+print("Area: rectangle1 - \(rectangle1.area()) rectangle2 - \(rectangle2.area())")
+```
+
+
+
+Printing the areas of `square1` and `square2` shows:
+
+```
+Area: square1 - 16 square2 - 25
+```
+
+
+
+Printing the area of `rectangle1` and `rectangle2` shows:
+
+```
+Area: rectangle1 - 20 rectangle2 - 20
+```
+
+
+
+The difference in behavior stems from the fact that structs and classes behave differently in Swift. For `rectangle1` and `rectangle2`, both are instances of the `Rectangle` class, which is a reference type. When you assign `rectangle2` the value of `rectangle1`, you are **not** creating a copy. Rather you are creating another reference to the same instance in memory. Therefore, modifying the property of `rectangle2.length` to 5 would also affect `rectangle1.length` because they both reference the same value in the memory location.
+
+
+
+On the other hand, for `square1` and `square2`, both are instances of the `Square` struct, which is a value type. When you assign `square2` the value of `square1`, you are creating a distinct copy. Therefore, modifications made to `square2` properties do not affect `square1` and vice versa. 
+
+
+
+
+
