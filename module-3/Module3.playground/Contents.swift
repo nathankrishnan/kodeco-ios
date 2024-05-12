@@ -82,7 +82,7 @@ func calculateAverage(_ inputArray: [Int]? = nil) {
   }
 
   // Check if inputArray is empty
-  guard !unwrappedArray.isEmpty else {
+  guard unwrappedArray.count > 0 else {
     print("The array is empty. Calculating the average is impossible.")
     return
   }
