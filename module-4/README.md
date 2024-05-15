@@ -12,7 +12,7 @@ a) Question: List two Collection Types in Swift.
 
 b) Question: Name a function that uses **variadic** parameters.
 
-- Answer: The `print()` function is variadic and can take any number of parameters.
+- Answer: The `print()` function is variadic and can take any number of input parameters.
 
 
 
@@ -78,3 +78,15 @@ k) Question: True or False: Extensions in Swift allow you to add new functionali
 l) Question: True or False: A convenience initializer in Swift is responsible for initializing properties of a class.
 
 - Answer: False, convenience initializers are used to create additional ways to initialize an instance, but don't directly initialize all properties. Designated initializers have the primary responsiblity for initializing all the properties.
+
+
+
+## Part 2 - Programming assignment
+
+I have created a Swift playground in `./module-4/Module4.playground` that contains my answers for the assignment.
+
+
+
+## Part 3 - Above and Beyond
+
+My answers for the assignment are in the aforementioned Swift playground.
