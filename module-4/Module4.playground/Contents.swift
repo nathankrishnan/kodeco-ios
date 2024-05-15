@@ -120,7 +120,6 @@ theSoundMade(animal: .bird)
  Create an array of Int called nums with the values of 0 to 100.
 
  Create an array of Int? called numsWithNil with the following values:
-
  79, nil, 80, nil, 90, nil, 100, 72
 
 
