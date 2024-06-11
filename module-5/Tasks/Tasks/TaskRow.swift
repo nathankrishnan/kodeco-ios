@@ -8,21 +8,35 @@
 import SwiftUI
 
 struct TaskRow: View {
+  let taskItem: TaskItem
+
   var body: some View {
-    HStack {
-      Text("Task 1")
-        .font(.title3)
-        .fontWeight(.semibold)
-        .foregroundColor(Color.blue)
-      Spacer()
-      Image(systemName: "checkmark.square")
-        .foregroundStyle(.green)
-        .font(.system(size: 20, weight: .bold))
+    VStack() {
+      HStack {
+        Text(taskItem.title)
+          .font(.title3)
+          .fontWeight(.semibold)
+          .foregroundColor(Color.blue)
+        Spacer()
+        Image(systemName: taskItem.status == .completed ? "checkmark.square" : "square")
+          .foregroundStyle(taskItem.status == .completed ? .green : .red)
+          .font(.system(size: 20, weight: .bold))
+      }
+      .padding(.horizontal, 30)
+      .padding(.vertical)
+
+      Divider()
+        .padding(.horizontal, 20)
     }
-    .padding(.horizontal, 30)
+
   }
 }
 
 #Preview {
-  TaskRow()
+  NavigationStack {
+    TaskRow(taskItem: TaskItem(title: "Task 1", notes: "", status: .completed))
+    TaskRow(taskItem: TaskItem(title: "Task 2", notes: "", status: .pending))
+    Spacer()
+      .navigationTitle("My Tasks")
+  }
 }

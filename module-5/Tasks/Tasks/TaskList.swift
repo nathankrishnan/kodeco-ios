@@ -8,14 +8,19 @@
 import SwiftUI
 
 struct TaskList: View {
-    var body: some View {
-      NavigationStack {
-        Text("Test")
-          .navigationTitle("My Tasks")
+  @StateObject var taskItemStore = TaskItemStore()
+
+  var body: some View {
+    NavigationStack {
+      ForEach(taskItemStore.tasks) {
+        TaskRow(taskItem: $0)
       }
+      Spacer()
+      .navigationTitle("My Tasks")
     }
+  }
 }
 
 #Preview {
-    TaskList()
+  TaskList()
 }
