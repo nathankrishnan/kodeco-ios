@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct TaskList: View {
-  @StateObject var taskItemStore = TaskItemStore()
+  @EnvironmentObject var taskItemStore: TaskItemStore
 
   var body: some View {
     NavigationStack {
@@ -23,4 +23,5 @@ struct TaskList: View {
 
 #Preview {
   TaskList()
+    .environmentObject(TaskItemStore())
 }

@@ -9,9 +9,10 @@ import SwiftUI
 
 @main
 struct TasksApp: App {
-    var body: some Scene {
-        WindowGroup {
-            TaskList()
-        }
+  var body: some Scene {
+    WindowGroup {
+      TaskList()
+        .environmentObject(TaskItemStore())
     }
+  }
 }
