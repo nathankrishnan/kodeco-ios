@@ -8,11 +8,30 @@
 import SwiftUI
 
 struct AddNewTaskItem: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+  @State private var taskTitle = ""
+  @State private var notes = ""
+  @EnvironmentObject var taskItemStore: TaskItemStore
+
+  var body: some View {
+    NavigationView {
+      Form {
+        Section("Task Title") {
+          TextField("Test", text: $taskTitle)
+        }
+        Section("Notes") {
+          TextField("Notes", text: $notes)
+        }
+      }
+      .navigationBarTitle("Adding New Task", displayMode: .inline)
+      .navigationBarItems(leading: Button(action: {}, label: {
+        Text("Cancel")
+      }), trailing: Button(action: {}, label: {
+        Text("Add")
+      }))
     }
+  }
 }
 
 #Preview {
-    AddNewTaskItem()
+  AddNewTaskItem()
 }
