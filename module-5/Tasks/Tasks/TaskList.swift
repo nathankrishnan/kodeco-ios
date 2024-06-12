@@ -16,7 +16,26 @@ struct TaskList: View {
         TaskRow(taskItem: $0)
       }
       Spacer()
+      HStack {
+        NewTaskButton()
+        Spacer()
+      }
+      .padding(.leading, 20)
       .navigationTitle("My Tasks")
+    }
+  }
+}
+
+struct NewTaskButton: View {
+  var body: some View {
+    Button(action: {
+      // TODO
+    }) {
+      HStack {
+        Image(systemName: "plus.circle.fill")
+        Text("New Task")
+          .fontWeight(.bold)
+      }
     }
   }
 }
