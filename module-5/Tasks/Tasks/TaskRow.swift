@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct TaskRow: View {
+  @EnvironmentObject var taskItemStore: TaskItemStore
   let taskItem: TaskItem
 
   var body: some View {
@@ -18,9 +19,13 @@ struct TaskRow: View {
           .fontWeight(.semibold)
           .foregroundColor(Color.blue)
         Spacer()
-        Image(systemName: taskItem.status == .completed ? "checkmark.square" : "square")
-          .foregroundStyle(taskItem.status == .completed ? .green : .red)
-          .font(.system(size: 20, weight: .bold))
+        Button(action: {
+          taskItemStore.toggleTaskItemStatus(for: taskItem)
+        }) {
+          Image(systemName: taskItem.status == .completed ? "checkmark.square" : "square")
+            .foregroundStyle(taskItem.status == .completed ? .green : .red)
+            .font(.system(size: 20, weight: .bold))
+        }
       }
       .padding(.horizontal, 30)
       .padding(.vertical)
@@ -39,4 +44,5 @@ struct TaskRow: View {
     Spacer()
       .navigationTitle("My Tasks")
   }
+  .environmentObject(TaskItemStore())
 }
