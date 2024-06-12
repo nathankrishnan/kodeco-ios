@@ -10,8 +10,9 @@ import SwiftUI
 struct AddNewTaskItem: View {
   @State private var taskTitle = ""
   @State private var notes = ""
+  @Environment(\.dismiss) var dismiss
   @EnvironmentObject var taskItemStore: TaskItemStore
-
+  
   var body: some View {
     NavigationView {
       Form {
@@ -23,9 +24,12 @@ struct AddNewTaskItem: View {
         }
       }
       .navigationBarTitle("Adding New Task", displayMode: .inline)
-      .navigationBarItems(leading: Button(action: {}, label: {
+      .navigationBarItems(leading: Button(action: { dismiss() }, label: {
         Text("Cancel")
-      }), trailing: Button(action: {}, label: {
+      }), trailing: Button(action: {
+        taskItemStore.addNewTaskItem(title: taskTitle, notes: notes)
+        dismiss()
+      }, label: {
         Text("Add")
       }))
     }
@@ -34,4 +38,5 @@ struct AddNewTaskItem: View {
 
 #Preview {
   AddNewTaskItem()
+    .environmentObject(TaskItemStore())
 }
