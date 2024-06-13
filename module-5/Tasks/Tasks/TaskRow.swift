@@ -20,7 +20,7 @@ struct TaskRow: View {
           .foregroundColor(Color.blue)
         Spacer()
         Button(action: {
-          taskItemStore.toggleTaskItemStatus(for: taskItem)
+          taskItemStore.toggleStatus(for: taskItem)
         }) {
           Image(systemName: taskItem.status == .completed ? "checkmark.square" : "square")
             .foregroundStyle(taskItem.status == .completed ? .green : .red)

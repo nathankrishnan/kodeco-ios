@@ -16,21 +16,31 @@ class TaskItemStore: ObservableObject {
     TaskItem(title: "Task 5", notes: "Fifth", status: .pending)
   ]
 
-  func addNewTaskItem(title: String, notes: String, status: TaskItemStatus = .pending) {
+  func add(title: String, notes: String, status: TaskItemStatus = .pending) {
     let taskTitle = title.isEmpty ? "New Task" : title
     tasks.append(TaskItem(title: taskTitle, notes: notes, status: status))
   }
 
-  func updateTaskItem(for taskItem: TaskItem, title: String, notes: String, status: TaskItemStatus) {
-    if let index = tasks.firstIndex(where: { $0.id == taskItem.id }) {
-      tasks[index].title = title
-      tasks[index].notes = notes
-      tasks[index].status = status
+  func update(existing taskItem: TaskItem, title: String?, notes: String?, status: TaskItemStatus?) {
+    guard let index = tasks.firstIndex(where: { $0.id == taskItem.id }) else {
+      return
+    }
+
+    if let newTitle = title {
+      tasks[index].title = newTitle
+    }
+
+    if let newNotes = notes {
+      tasks[index].notes = newNotes
+    }
+
+    if let newStatus = status {
+      tasks[index].status = newStatus
     }
   }
 
-  func toggleTaskItemStatus(for taskItem: TaskItem) {
-    let newStatus: TaskItemStatus = (taskItem.status == .completed) ? .pending : .completed
-    updateTaskItem(for: taskItem, title: taskItem.title, notes: taskItem.notes, status: newStatus)
+  func toggleStatus(for taskItem: TaskItem) {
+    let newStatus: TaskItemStatus = (taskItem.isCompleted) ? .pending : .completed
+    update(existing: taskItem, title: taskItem.title, notes: taskItem.notes, status: newStatus)
   }
 }

@@ -27,7 +27,7 @@ struct AddNewTaskItem: View {
       .navigationBarItems(leading: Button(action: { dismiss() }, label: {
         Text("Cancel")
       }), trailing: Button(action: {
-        taskItemStore.addNewTaskItem(title: taskTitle, notes: notes)
+        taskItemStore.add(title: taskTitle, notes: notes)
         dismiss()
       }, label: {
         Text("Add")
