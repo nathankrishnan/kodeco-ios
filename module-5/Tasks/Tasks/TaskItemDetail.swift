@@ -8,11 +8,39 @@
 import SwiftUI
 
 struct TaskItemDetail: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+  @State private var taskTitle = ""
+  @State private var notes = ""
+  @State private var isCompleted = false
+  @EnvironmentObject var taskItemStore: TaskItemStore
+  let taskItem: TaskItem
+
+  var body: some View {
+    Form {
+      Section("Task Title") {
+        TextField("Task", text: $taskTitle)
+          .onChange(of: taskTitle) { newTaskTitle in
+            // TODO
+            print("")
+          }
+      }
+      Section("Notes") {
+        TextField("Notes", text: $notes)
+      }
+      Section {
+        Toggle(isOn: $isCompleted, label: {
+          Text("Completed:")
+        })
+      }
     }
+    .onAppear {
+      taskTitle = taskItem.title
+      notes = taskItem.notes
+      isCompleted = taskItem.isCompleted
+    }
+  }
 }
 
 #Preview {
-    TaskItemDetail()
+  TaskItemDetail(taskItem: TaskItem(title: "Test", notes: "TODO", status: .completed))
+    .environmentObject(TaskItemStore())
 }

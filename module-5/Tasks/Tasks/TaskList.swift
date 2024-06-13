@@ -10,12 +10,14 @@ import SwiftUI
 struct TaskList: View {
   @EnvironmentObject var taskItemStore: TaskItemStore
   @State private var isNewTaskPresented = false
-  
+
   var body: some View {
     NavigationStack {
       VStack {
-        ForEach(taskItemStore.tasks) {
-          TaskRow(taskItem: $0)
+        ForEach(taskItemStore.tasks) { taskItem in
+          NavigationLink(destination: TaskItemDetail(taskItem: taskItem)) {
+            TaskRow(taskItem: taskItem)
+          }
         }
       }
       Spacer()
@@ -34,7 +36,7 @@ struct TaskList: View {
 
 struct NewTaskButton: View {
   @Binding var isPresented: Bool
-  
+
   var body: some View {
     Button(action: {
       isPresented.toggle()

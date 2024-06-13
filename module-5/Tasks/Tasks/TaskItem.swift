@@ -18,5 +18,9 @@ struct TaskItem: Identifiable {
   var title: String
   var notes: String
   var status: TaskItemStatus
+
+  var isCompleted: Bool {
+    return status == .completed
+  }
 }
 
