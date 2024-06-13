@@ -9,11 +9,11 @@ import Foundation
 
 class TaskItemStore: ObservableObject {
   @Published var tasks: [TaskItem] = [
-    TaskItem(title: "Task 1", notes: "", status: .pending),
-    TaskItem(title: "Task 2", notes: "", status: .completed),
-    TaskItem(title: "Task 3", notes: "", status: .pending),
-    TaskItem(title: "Task 4", notes: "", status: .completed),
-    TaskItem(title: "Task 5", notes: "", status: .pending)
+    TaskItem(title: "Task 1", notes: "First", status: .pending),
+    TaskItem(title: "Task 2", notes: "Second", status: .completed),
+    TaskItem(title: "Task 3", notes: "Third", status: .pending),
+    TaskItem(title: "Task 4", notes: "Forth", status: .completed),
+    TaskItem(title: "Task 5", notes: "Fifth", status: .pending)
   ]
 
   func addNewTaskItem(title: String, notes: String, status: TaskItemStatus = .pending) {
