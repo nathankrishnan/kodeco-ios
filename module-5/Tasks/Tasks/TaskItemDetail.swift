@@ -18,18 +18,24 @@ struct TaskItemDetail: View {
     Form {
       Section("Task Title") {
         TextField("Task", text: $taskTitle)
-          .onChange(of: taskTitle) { newTaskTitle in
-            // TODO
-            print("")
+          .onChange(of: taskTitle) { _, newTaskTitle in
+            taskItemStore.update(existing: taskItem, title: newTaskTitle, notes: nil, status: nil)
           }
       }
       Section("Notes") {
         TextField("Notes", text: $notes)
+          .onChange(of: notes) { _, newNotes in
+            taskItemStore.update(existing: taskItem, title: nil, notes: newNotes, status: nil)
+          }
       }
       Section {
         Toggle(isOn: $isCompleted, label: {
           Text("Completed:")
         })
+        .onChange(of: isCompleted) {
+          let newStatus: TaskItemStatus = isCompleted ? .completed : .pending
+          taskItemStore.update(existing: taskItem, title: nil, notes: nil, status: newStatus)
+        }
       }
     }
     .onAppear {
