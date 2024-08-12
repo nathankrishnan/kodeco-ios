@@ -17,6 +17,7 @@
 		D8077D552C12DED00075359D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8077D542C12DED00075359D /* Assets.xcassets */; };
 		D8077D582C12DED00075359D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8077D572C12DED00075359D /* Preview Assets.xcassets */; };
 		D82937442C1AC09300044BD2 /* TaskItemStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82937432C1AC09300044BD2 /* TaskItemStoreTests.swift */; };
+		D85E35792C698F17006001C2 /* TaskTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85E35782C698F17006001C2 /* TaskTabView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,7 @@
 		D8077D572C12DED00075359D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D82937412C1AC09300044BD2 /* TaskItemStoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TaskItemStoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D82937432C1AC09300044BD2 /* TaskItemStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskItemStoreTests.swift; sourceTree = "<group>"; };
+		D85E35782C698F17006001C2 /* TaskTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTabView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +118,7 @@
 				D80716832C16BE3F00E8DE9E /* TaskRow.swift */,
 				D80716852C16C33D00E8DE9E /* TaskItemDetail.swift */,
 				D80716872C16C39900E8DE9E /* AddNewTaskItem.swift */,
+				D85E35782C698F17006001C2 /* TaskTabView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -221,6 +224,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D80716842C16BE4000E8DE9E /* TaskRow.swift in Sources */,
+				D85E35792C698F17006001C2 /* TaskTabView.swift in Sources */,
 				D80716862C16C33D00E8DE9E /* TaskItemDetail.swift in Sources */,
 				D8077D532C12DECF0075359D /* TaskList.swift in Sources */,
 				D8077D512C12DECF0075359D /* TasksApp.swift in Sources */,

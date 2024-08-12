@@ -11,11 +11,12 @@ struct TaskList: View {
   @EnvironmentObject var taskItemStore: TaskItemStore
   @State private var isNewTaskPresented = false
   @State private var searchText = ""
+  var filterByTaskItemStatus: TaskItemStatus = .pending
   
   var body: some View {
     NavigationStack {
       List {
-        ForEach(taskItemStore.tasks.filter { ($0.title.contains(searchText) || searchText.isEmpty) }) { taskItem in
+        ForEach(taskItemStore.tasks.filter { (filterByTaskItemStatus == .pending ? !$0.isCompleted : $0.isCompleted) && ($0.title.contains(searchText) || searchText.isEmpty) }) { taskItem in
           TaskRow(taskItem: taskItem)
         }
       }
