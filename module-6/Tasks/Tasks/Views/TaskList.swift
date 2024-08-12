@@ -12,12 +12,35 @@ struct TaskList: View {
   @State private var isNewTaskPresented = false
   @State private var searchText = ""
   var filterByTaskItemStatus: TaskItemStatus = .pending
-  
+
+  /*
+   TaskItems are filtered by their title only when the user is actively searching.
+   When the searchText is empty, the filter ignores the title,
+   showing all tasks that match the completion status
+  */
+  var filteredTasks: [TaskItem] {
+    taskItemStore.tasks.filter {
+      (filterByTaskItemStatus == .pending ? !$0.isCompleted : $0.isCompleted) &&
+      ($0.title.contains(searchText) || searchText.isEmpty)
+    }
+  }
+
   var body: some View {
     NavigationStack {
-      List {
-        ForEach(taskItemStore.tasks.filter { (filterByTaskItemStatus == .pending ? !$0.isCompleted : $0.isCompleted) && ($0.title.contains(searchText) || searchText.isEmpty) }) { taskItem in
-          TaskRow(taskItem: taskItem)
+      VStack {
+        if filteredTasks.isEmpty {
+          Text(filterByTaskItemStatus == .pending ?
+               "Congratulations! All tasks completed." :
+                "You have tasks to work on. You got this!")
+          .foregroundStyle(Color.gray)
+          .padding()
+
+        } else {
+          List {
+            ForEach(filteredTasks) { taskItem in
+              TaskRow(taskItem: taskItem)
+            }
+          }
         }
       }
       .navigationTitle("My Tasks")
@@ -36,7 +59,7 @@ struct TaskList: View {
 
 struct NewTaskButton: View {
   @Binding var isPresented: Bool
-  
+
   var body: some View {
     Button(action: {
       isPresented.toggle()
