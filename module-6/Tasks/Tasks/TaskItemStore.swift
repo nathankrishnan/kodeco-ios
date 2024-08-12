@@ -10,11 +10,11 @@ import Foundation
 /// Manages a collection of task items.
 class TaskItemStore: ObservableObject {
   @Published var tasks: [TaskItem] = [
-    TaskItem(title: "Task 1", notes: "First", status: .pending),
-    TaskItem(title: "Task 2", notes: "Second", status: .completed),
-    TaskItem(title: "Task 3", notes: "Third", status: .pending),
-    TaskItem(title: "Task 4", notes: "Forth", status: .completed),
-    TaskItem(title: "Task 5", notes: "Fifth", status: .pending)
+    TaskItem(title: "Exercise", notes: "First", status: .pending),
+    TaskItem(title: "Readings", notes: "Second", status: .completed),
+    TaskItem(title: "Work on hw", notes: "Third", status: .pending),
+    TaskItem(title: "Eat dinner", notes: "Forth", status: .completed),
+    TaskItem(title: "Make green tea", notes: "Fifth", status: .pending)
   ]
 
   /// Adds a new task item to the store.
