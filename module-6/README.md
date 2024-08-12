@@ -98,4 +98,5 @@ I have refactored my Task app:
 - Added a search bar to filter tasks by title
 - Introduced a `TabView` with two tabs for pending and completed tasks
 - Added animation for toggling the SF Symbol and its associated color when the status of a task is updated
+- Display a message when there are either no pending tasks or all the tasks are completed
 
