@@ -21,7 +21,7 @@ struct TaskList: View {
   var filteredTasks: [TaskItem] {
     taskItemStore.tasks.filter {
       (filterByTaskItemStatus == .pending ? !$0.isCompleted : $0.isCompleted) &&
-      ($0.title.contains(searchText) || searchText.isEmpty)
+      ($0.title.lowercased().contains(searchText.lowercased()) || searchText.isEmpty)
     }
   }
 
