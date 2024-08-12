@@ -13,7 +13,7 @@ enum TaskItemStatus {
   case completed
 }
 
-struct TaskItem: Identifiable {
+struct TaskItem: Identifiable, Hashable {
   let id = UUID()
   var title: String
   var notes: String
