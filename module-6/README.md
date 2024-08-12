@@ -8,13 +8,13 @@ a) Question: In SwiftUI, you describe your interfaces _____________ and leave th
 
 
 
-b) Question: When a **View** first appears, and you want it to animate in, you can do so in the Views ___________ modifier.
+b) Question: When a View first appears, and you want it to animate in, you can do so in the Views ___________ modifier.
 
 - Answer: `onAppear` modifier
 
 
 
-c) In Swift, the native types ______________ and ____________ implement the **Hashable** protocol.
+c) In Swift, the native types ______________ and ____________ implement the Hashable protocol.
 
 - Answer: `String` and `Int` implement the Hashable protocol.
 
@@ -88,4 +88,14 @@ m) The _________ method of ScrollViewReader is used to navigate to a particular 
 
 ## Part 2 - Programming assignment
 
-I have created
+![refactored-task-app-preview](./refactored-task-app-preview.gif)
+
+I have refactored my Task app:
+
+- Moved the button to create a new task to the navigation toolbar
+
+- Replaced the previous implementation with a `List`
+- Added a search bar to filter tasks by title
+- Introduced a `TabView` with two tabs for pending and completed tasks
+- Added animation for toggling the SF Symbol and its associated color when the status of a task is updated
+
